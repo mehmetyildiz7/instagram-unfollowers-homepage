@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${appName}">Instagram Unfollowers Tracker</title>
+    <link rel="stylesheet" th:href="@{/style.css}" href="/style.css"/>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafafa; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 32px; }
+        h1 { color: #262626; }
+        ul { padding-left: 20px; }
+        .download-btns a { display: inline-block; margin: 12px 16px 0 0; padding: 12px 24px; border-radius: 6px; background: #3897f0; color: #fff; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .download-btns a.ios { background: #222; }
+        .download-btns a:hover { background: #2563c9; }
+        .download-btns a.ios:hover { background: #444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${appName}">Instagram Unfollowers Tracker</h1>
+        <p th:text="${description}">Find out who doesn't follow you back on Instagram...</p>
+        <h2>Features</h2>
+        <ul>
+            <li th:each="feature : ${features}" th:text="${feature}">Feature</li>
+        </ul>
+        <div class="download-btns">
+            <a th:href="${androidLink}" target="_blank">Download for Android</a>
+            <a th:href="${iosLink}" class="ios" target="_blank">Download for iOS</a>
+        </div>
+    </div>
+</body>
+</html>
